@@ -17,14 +17,15 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  {{-- <link href="css/bootstrap.min.css" rel="stylesheet"> --}}
   <!--external css-->
   <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
+  {{-- <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
   <link rel="stylesheet" type="text/css" href="css/jquery.gritter.css" />
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet"> --}}
+  <link href="css/plantilla.css" rel="stylesheet">
 
 </head>
 
@@ -394,7 +395,7 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="js/jquery.min.js"></script>
+  {{-- <script src="js/jquery.min.js"></script>
 
   <script src="js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
@@ -407,10 +408,10 @@
   <script type="text/javascript" src="js/gritter-conf.js"></script>
   <!--script for this page-->
   <script src="js/sparkline-chart.js"></script>
-  <script src="js/zabuto_calendar.js"></script>
+  <script src="js/zabuto_calendar.js"></script> --}}
 
   {{-- <script src="js/app.js"></script> --}}
-  {{-- <script src="js/plantilla.js"></script> --}}
+  <script src="js/plantilla.js"></script>
 
   {{-- <script type="text/javascript">
     $(document).ready(function() {
