@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <meta name="author" content="EasyCode">
+  <meta name="keyword" content="">
+  <title>MJLO - Sistema Interno</title>
 
   <!-- Favicons -->
-  {{-- <link href="img/favicon.png" rel="icon">
+  <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
+  <link href="img/logo_mjlo.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,29 +25,25 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
-  {{-- <script src="lib/chart-master/Chart.js"></script> --}}
 
 </head>
 
 <body>
   <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
     <!--header start-->
     <header class="header black-bg">
       <div class="sidebar-toggle-box">
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>DASH<span>IO</span></b></a>
+      <a href="index.html" class="logo"><b>Municipalidad <span>José Leonardo Ortiz</span></b></a>
       <!--logo end-->
-      <div class="nav notify-row" id="top_menu">
+      {{-- <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
         <ul class="nav top-menu">
           <!-- settings start -->
           <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
               </a>
@@ -226,10 +222,16 @@
           <!-- notification dropdown end -->
         </ul>
         <!--  notification end -->
-      </div>
+      </div> --}}
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
+          <li>
+            <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            {{ __('Cerrar sesión') }}</a>
+          </li>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
         </ul>
       </div>
     </header>
@@ -239,11 +241,11 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><a href="profile.html"><img src="img/logo_mjlo.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Sistema Interno</h5>
           <li class="mt">
-            <a class="active" href="index.html">
-              <i class="fa fa-dashboard"></i>
+            <a class="active" href="#">
+              <i class="fas fa-gamepad"></i>
               <span>Dashboard</span>
               </a>
           </li>
@@ -410,7 +412,7 @@
   {{-- <script src="js/app.js"></script> --}}
   {{-- <script src="js/plantilla.js"></script> --}}
 
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
     $(document).ready(function() {
       var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
@@ -441,28 +443,28 @@
         $(this).hide();
       });
 
-      // $("#my-calendar").zabuto_calendar({
-      //   action: function() {
-      //     return myDateFunction(this.id, false);
-      //   },
-      //   action_nav: function() {
-      //     return myNavFunction(this.id);
-      //   },
-      //   ajax: {
-      //     url: "show_data.php?action=1",
-      //     modal: true
-      //   },
-      //   legend: [{
-      //       type: "text",
-      //       label: "Special event",
-      //       badge: "00"
-      //     },
-      //     {
-      //       type: "block",
-      //       label: "Regular event",
-      //     }
-      //   ]
-      // });
+      $("#my-calendar").zabuto_calendar({
+        action: function() {
+          return myDateFunction(this.id, false);
+        },
+        action_nav: function() {
+          return myNavFunction(this.id);
+        },
+        ajax: {
+          url: "show_data.php?action=1",
+          modal: true
+        },
+        legend: [{
+            type: "text",
+            label: "Special event",
+            badge: "00"
+          },
+          {
+            type: "block",
+            label: "Regular event",
+          }
+        ]
+      });
     });
 
     function myNavFunction(id) {
@@ -471,7 +473,7 @@
       var to = $("#" + id).data("to");
       console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
-  </script>
+  </script> --}}
   
 </body>
 
