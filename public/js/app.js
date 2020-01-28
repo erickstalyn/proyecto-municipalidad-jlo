@@ -1924,6 +1924,59 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37309,19 +37362,152 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
+    return _c("div", [
+      _c("h3", [
+        _c("i", { staticClass: "fa fa-angle-right" }),
+        _vm._v(" Empresas registradas")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mb" }, [
+        _c("div", { staticClass: "content-panel" }, [
+          _c("div", { staticClass: "adv-table" }, [
+            _c(
+              "table",
+              {
+                staticClass: "display table table-bordered",
+                attrs: {
+                  cellpadding: "0",
+                  cellspacing: "0",
+                  border: "0",
+                  id: "hidden-table-info"
+                }
+              },
+              [
+                _c("thead", [
+                  _c("tr", [
+                    _c("th", [_vm._v("Rendering engine")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Browser")]),
+                    _vm._v(" "),
+                    _c("th", { staticClass: "hidden-phone" }, [
+                      _vm._v("Platform(s)")
+                    ]),
+                    _vm._v(" "),
+                    _c("th", { staticClass: "hidden-phone" }, [
+                      _vm._v("Engine version")
+                    ]),
+                    _vm._v(" "),
+                    _c("th", { staticClass: "hidden-phone" }, [
+                      _vm._v("CSS grade")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("tbody", [
+                  _c("tr", { staticClass: "gradeX" }, [
+                    _c("td", [_vm._v("Trident")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Internet Explorer 4.0")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "hidden-phone" }, [
+                      _vm._v("Win 95+")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("4")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("X")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", { staticClass: "gradeA" }, [
+                    _c("td", [_vm._v("Gecko")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Netscape Browser 8")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "hidden-phone" }, [
+                      _vm._v("Win 98SE+")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("1.7")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("A")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", { staticClass: "gradeX" }, [
+                    _c("td", [_vm._v("Tasman")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Internet Explorer 4.5")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "hidden-phone" }, [
+                      _vm._v("Mac OS 8-9")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("-")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("X")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", { staticClass: "gradeC" }, [
+                    _c("td", [_vm._v("Tasman")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Internet Explorer 5.1")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "hidden-phone" }, [
+                      _vm._v("Mac OS 7.6-9")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("1")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("C")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", { staticClass: "gradeC" }, [
+                    _c("td", [_vm._v("Tasman")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Internet Explorer 5.2")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "hidden-phone" }, [
+                      _vm._v("Mac OS 8-X")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("1")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center hidden-phone" }, [
+                      _vm._v("C")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", { staticClass: "gradeA" }, [
+                    _c("td", [_vm._v("Misc")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("NetFront 3.1")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Embedded devices")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center" }, [_vm._v("-")]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "center" }, [_vm._v("C")])
+                  ])
+                ])
+              ]
+            )
           ])
         ])
       ])
@@ -49522,9 +49708,10 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-// const app = new Vue({
-//     el: '#app',
-// });
+
+var app = new Vue({
+  el: '#app'
+});
 
 /***/ }),
 

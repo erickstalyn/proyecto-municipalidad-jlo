@@ -30,7 +30,7 @@
 </head>
 
 <body>
-  <section id="container">
+  <section id="app">
     <!--header start-->
     <header class="header black-bg">
       <div class="sidebar-toggle-box">
@@ -259,7 +259,7 @@
           </div>
         </div> --}}
         <div class="container-fluid">
-          Hello
+          <example-component></example-component>
         </div>
       </section>
     </section>
@@ -296,7 +296,7 @@
   <script src="js/sparkline-chart.js"></script>
   <script src="js/zabuto_calendar.js"></script> --}}
 
-  {{-- <script src="js/app.js"></script> --}}
+  <script src="js/app.js"></script>
   <script src="js/plantilla.js"></script>
 
   {{-- <script type="text/javascript">
