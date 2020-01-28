@@ -363,12 +363,14 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <div class="row">
+        {{-- <div class="row">
           <div class="col-lg-9">
             holaa
           </div>
+        </div> --}}
+        <div class="container-fluid">
+          Hello
         </div>
-        <!-- /row -->
       </section>
     </section>
     <!--main content end-->
@@ -376,16 +378,10 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; <strong>EasyCode</strong>. 2020
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+          Desarrollado por <a href="#">Erick Stalyn Pacherrez Puyén y José Anderson Diaz Céspedes</a>
         </div>
         <a href="index.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
