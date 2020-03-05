@@ -3,7 +3,7 @@
 @section('contenidoPrincipal')
 
     @if(Auth::check())
-        @if(Auth::user()->tipo=='G')
+        {{-- @if(Auth::user()->tipo=='G')
             <template v-if="menu==1">
                 <ger_equipo></ger_equipo>
             </template>
@@ -15,7 +15,10 @@
 
         @else
 
-        @endif
+        @endif --}}
+        <template v-if="menu==2">
+            <example-component></example-component>
+        </template>
     @endif
 
 @endsection

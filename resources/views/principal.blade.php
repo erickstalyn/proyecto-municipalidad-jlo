@@ -259,7 +259,8 @@
           </div>
         </div> --}}
         <div class="container-fluid">
-          <example-component></example-component>
+          @yield('contenidoPrincipal')
+
         </div>
       </section>
     </section>

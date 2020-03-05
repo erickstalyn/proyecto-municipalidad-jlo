@@ -4,7 +4,13 @@
     <li class="mt">
       <a class="active" href="#">
         <i class="fas fa-gamepad"></i>
-        <span>Inicio</span>
+        <span>Consultas</span>
+        </a>
+    </li>
+    <li class="mt">
+      <a href="#" @click="menu=2">
+        <i class="fas fa-gamepad"></i>
+        <span>Expedientes</span>
         </a>
     </li>
     <li class="sub-menu">
