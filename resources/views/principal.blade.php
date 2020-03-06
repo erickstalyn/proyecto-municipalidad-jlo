@@ -97,7 +97,7 @@
 
                 @include('sidebars.sidebaradministrador')
                 
-                @yield('contenido')
+                @yield('contenidoPrincipal')
             </div>
 
         </div>

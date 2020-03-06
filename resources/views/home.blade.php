@@ -16,8 +16,8 @@
         @else
 
         @endif --}}
-        <template v-if="menu==2">
-            
+        <template v-if="menu==3">
+            <expediente></expediente>
         </template>
     @endif
 
