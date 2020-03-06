@@ -1,368 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="EasyCode">
-  <meta name="keyword" content="">
-  <title>MJLO - Sistema Interno</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Sistema Ventas Laravel Vue Js- IncanatoIT">
+        <meta name="author" content="Incanatoit.com">
+        <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
+        
+        <link rel="shortcut icon" href="img/favicon.png">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+        <meta name="userId" content="{{Auth::check() ? Auth::user()->id : ''}}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Municipalidad JLO</title>
+        <!-- Icons -->
+        {{-- <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/simple-line-icons.min.css" rel="stylesheet">
+        <!-- Main styles for this application -->
+        <link href="css/style.css" rel="stylesheet"> --}}
+        <link href="css/plantilla.css" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.7.2/src/chart.js"> --}}
+    </head>
 
-  <link href="img/logo_mjlo.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+        <div id="app">
+            <!-- Aqui va la NAVEGACION SUPERIOR  -->
+            <header class="app-header navbar">
+                <i class="fab fa-app-store-ios"></i>
+                <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav navbar-nav d-md-down-none">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">Escritorio</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">Configuraciones</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <notification :notifications="notifications"></notification>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <span class="d-md-down-none"> {{Auth::user()->usuario}} </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-header text-center">
+                                <strong>Cuenta</strong>
+                            </div>
+                            <a class="dropdown-item" href="{{route('logout')}}" 
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-lock"></i> Cerrar sesión</a>
+                            <form id="logout-form" action="{{route('logout')}}" method="post" style="display:none;">
+                                {{csrf_field()}}
+                            </form>
 
-  <!-- Bootstrap core CSS -->
-  {{-- <link href="css/bootstrap.min.css" rel="stylesheet"> --}}
-  <!--external css-->
-  <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  {{-- <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
-  <link rel="stylesheet" type="text/css" href="css/jquery.gritter.css" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet"> --}}
-  <link href="css/plantilla.css" rel="stylesheet">
+                        </div>
+                    </li>
+                    
+                </ul>
+            </header>
+            <!-- FIN DE LA NAVEGACION SUPERIOR  -->
 
-</head>
+            <!-- BARRA LATERAL DE OPCIONES SEGUN EL TIPO SE USUARIO -->
+            <div class="app-body">
 
-<body>
-  <section id="app">
-    <!--header start-->
-    <header class="header black-bg">
-      <div class="sidebar-toggle-box">
-        <div class="fa fa-bars tooltips" data-placement="right"></div>
-      </div>
-      <!--logo start-->
-      <a href="#" class="logo"><b>Municipalidad de <span>José Leonardo Ortiz</span></b></a>
-      <!--logo end-->
-      {{-- <div class="nav notify-row" id="top_menu">
-        <!--  notification start -->
-        <ul class="nav top-menu">
-          <!-- settings start -->
-          <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <i class="fa fa-tasks"></i>
-              <span class="badge bg-theme">4</span>
-              </a>
-            <ul class="dropdown-menu extended tasks-bar">
-              <div class="notify-arrow notify-arrow-green"></div>
-              <li>
-                <p class="green">You have 4 pending tasks</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Dashio Admin Panel</div>
-                    <div class="percent">40%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Database Update</div>
-                    <div class="percent">60%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                      <span class="sr-only">60% Complete (warning)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Product Development</div>
-                    <div class="percent">80%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                      <span class="sr-only">80% Complete</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Payments Sent</div>
-                    <div class="percent">70%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                      <span class="sr-only">70% Complete (Important)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="external">
-                <a href="#">See All Tasks</a>
-              </li>
-            </ul>
-          </li>
-          <!-- settings end -->
-          <!-- inbox dropdown start-->
-          <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-envelope-o"></i>
-              <span class="badge bg-theme">5</span>
-              </a>
-            <ul class="dropdown-menu extended inbox">
-              <div class="notify-arrow notify-arrow-green"></div>
-              <li>
-                <p class="green">You have 5 new messages</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
-                  </span>
-                  <span class="message">
-                  Hi mate, how is everything?
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
-                  </span>
-                  <span class="message">
-                  Hi, I need your help with this.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
-                  </span>
-                  <span class="message">
-                  Love your new Dashboard.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
-                  <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
-                  </span>
-                  <span class="message">
-                  Please, answer asap.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">See all messages</a>
-              </li>
-            </ul>
-          </li>
-          <!-- inbox dropdown end -->
-          <!-- notification dropdown start-->
-          <li id="header_notification_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-bell-o"></i>
-              <span class="badge bg-warning">7</span>
-              </a>
-            <ul class="dropdown-menu extended notification">
-              <div class="notify-arrow notify-arrow-yellow"></div>
-              <li>
-                <p class="yellow">You have 7 new notifications</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  Server Overloaded.
-                  <span class="small italic">4 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-warning"><i class="fa fa-bell"></i></span>
-                  Memory #2 Not Responding.
-                  <span class="small italic">30 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  Disk Space Reached 85%.
-                  <span class="small italic">2 hrs.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-success"><i class="fa fa-plus"></i></span>
-                  New User Registered.
-                  <span class="small italic">3 hrs.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">See all notifications</a>
-              </li>
-            </ul>
-          </li>
-          <!-- notification dropdown end -->
-        </ul>
-        <!--  notification end -->
-      </div> --}}
-      <div class="top-menu">
-        <ul class="nav pull-right top-menu">
-          <li>
-            <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-            {{ __('Cerrar sesión') }}</a>
-          </li>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>
-        </ul>
-      </div>
-    </header>
-    <!--header end-->
-    <!--sidebar start-->
-    <aside>
-      <div id="sidebar" class="nav-collapse ">
+                {{-- @if(Auth::check())
+                    @if(Auth::user()->idrol==1)
+                        @include('plantilla.sidebaradministrador')
+                    @elseif(Auth::user()->idrol==2)
+                        @include('plantilla.sidebarvendedor')
+                    @elseif(Auth::user()->idrol==3)
+                        @include('plantilla.sidebaralmacenero')
+                    @else
 
-        @include('sidebars.sidebaradministrador')
+                    @endif
+                @endif --}}
 
-
-      </div>
-    </aside>
-    <!--sidebar end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN CONTENT
-        *********************************************************************************************************************************************************** -->
-    <!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        {{-- <div class="row">
-          <div class="col-lg-9">
-            holaa
-          </div>
-        </div> --}}
-        <div class="container-fluid">
-          @yield('contenidoPrincipal')
+                @include('sidebars.sidebaradministrador')
+                
+                @yield('contenido')
+            </div>
 
         </div>
-      </section>
-    </section>
-    <!--main content end-->
-    <!--footer start-->
-    <footer class="site-footer">
-      <div class="text-center">
-        <p>
-          &copy; <strong>EasyCode</strong>. 2020
-        </p>
-        <div class="credits">
-          Desarrollado por <a href="#">Erick Stalyn Pacherrez Puyén y José Anderson Diaz Céspedes</a>
-        </div>
-        <a href="index.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
-          </a>
-      </div>
-    </footer>
-    <!--footer end-->
-  </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-  {{-- <script src="js/jquery.min.js"></script>
+        
 
-  <script src="js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="js/jquery.scrollTo.min.js"></script>
-  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="js/jquery.sparkline.js"></script>
-  <!--common script for all pages-->
-  <script src="js/common-scripts.js"></script>
-  <script type="text/javascript" src="js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="js/gritter-conf.js"></script>
-  <!--script for this page-->
-  <script src="js/sparkline-chart.js"></script>
-  <script src="js/zabuto_calendar.js"></script> --}}
+        <!-- PARTE INFERIOR DE LA APP -->
+        <footer class="app-footer">
+            <span><a href="http://www.incanatoit.com/">EasyCode</a> &copy; 2019</span>
+            <span class="ml-auto">Desarrollado por <a href="http://www.google.com/">EasyCode</a></span>
+        </footer>
+        <!-- FIN DE LA PARTE INFERIOR DE LA APP -->
 
-  <script src="js/app.js"></script>
-  <script src="js/plantilla.js"></script>
-
-  {{-- <script type="text/javascript">
-    $(document).ready(function() {
-      var unique_id = $.gritter.add({
-        // (string | mandatory) the heading of the notification
-        title: 'Welcome to Dashio!',
-        // (string | mandatory) the text inside the notification
-        text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
-        // (string | optional) the image to display on the left
-        image: 'img/ui-sam.jpg',
-        // (bool | optional) if you want it to fade out on its own or just sit there
-        sticky: false,
-        // (int | optional) the time you want it to be alive for before fading out
-        time: 8000,
-        // (string | optional) the class name you want to apply to that specific message
-        class_name: 'my-sticky-class'
-      });
-
-      return false;
-    });
-  </script>
-  <script type="application/javascript">
-    $(document).ready(function() {
-      $("#date-popover").popover({
-        html: true,
-        trigger: "manual"
-      });
-      $("#date-popover").hide();
-      $("#date-popover").click(function(e) {
-        $(this).hide();
-      });
-
-      $("#my-calendar").zabuto_calendar({
-        action: function() {
-          return myDateFunction(this.id, false);
-        },
-        action_nav: function() {
-          return myNavFunction(this.id);
-        },
-        ajax: {
-          url: "show_data.php?action=1",
-          modal: true
-        },
-        legend: [{
-            type: "text",
-            label: "Special event",
-            badge: "00"
-          },
-          {
-            type: "block",
-            label: "Regular event",
-          }
-        ]
-      });
-    });
-
-    function myNavFunction(id) {
-      $("#date-popover").hide();
-      var nav = $("#" + id).data("navigation");
-      var to = $("#" + id).data("to");
-      console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-    }
-  </script> --}}
-  
-</body>
+        <script src="js/app.js"></script>
+        <script src="js/plantilla.js"></script>
+        
+    </body>
 
 </html>

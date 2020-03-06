@@ -17,7 +17,7 @@
 
         @endif --}}
         <template v-if="menu==2">
-            <example-component></example-component>
+            
         </template>
     @endif
 
