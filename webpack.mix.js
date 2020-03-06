@@ -12,8 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.styles([
-  'resources/assets/plantilla/css/font-awesome.min.css',
-  'resources/assets/plantilla/css/simple-line-icons.min.css',
+  // 'resources/assets/plantilla/css/font-awesome.min.css',
+  // 'resources/assets/plantilla/css/simple-line-icons.min.css',
   'resources/assets/plantilla/css/style.css',
   'resources/assets/plantilla/css/bootstrap4.min.css',
 ], 'public/css/plantilla.css')

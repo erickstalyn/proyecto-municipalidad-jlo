@@ -5,51 +5,63 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Sistema Ventas Laravel Vue Js- IncanatoIT">
-        <meta name="author" content="Incanatoit.com">
-        <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
+        <meta name="description" content="Sistema Interno MJLO">
+        <meta name="author" content="EasyCode">
+        <meta name="keyword" content="">
         
-        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="shortcut icon" href="img/logo_mjlo.png">
 
-        <meta name="userId" content="{{Auth::check() ? Auth::user()->id : ''}}">
+        {{-- <meta name="userId" content="{{Auth::check() ? Auth::user()->id : ''}}"> --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Municipalidad JLO</title>
-        <!-- Icons -->
-        {{-- <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/simple-line-icons.min.css" rel="stylesheet">
-        <!-- Main styles for this application -->
-        <link href="css/style.css" rel="stylesheet"> --}}
+
+        <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <link href="css/plantilla.css" rel="stylesheet">
-        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.7.2/src/chart.js"> --}}
     </head>
 
     <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
         <div id="app">
             <!-- Aqui va la NAVEGACION SUPERIOR  -->
             <header class="app-header navbar">
-                <i class="fab fa-app-store-ios"></i>
+                
                 <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
-                <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand h6 pt-3 pl-2" href="#">
+                  Sistema Interno
+                </a>
                 <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
-                <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
                 <ul class="nav navbar-nav d-md-down-none">
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Escritorio</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Configuraciones</a>
+                    </li>
+                    <li class="nav-item px-3">
+                    </li>
+                    <li class="nav-item px-3">
+                    </li>
+                    <li class="nav-item px-3">
+                    </li>
+                    <li class="nav-item px-3">
+                    </li>
+                    <li class="nav-item px-3">
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link h4" href="#">
+                        Municipalidad José Leonardo Ortiz <img src="img/logo_mjlo.jpg" alt="" width="48" height="48">
+                      </a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
-                    <notification :notifications="notifications"></notification>
+                    {{-- <notification :notifications="notifications"></notification> --}}
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            <img src="img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                            <span class="d-md-down-none"> {{Auth::user()->usuario}} </span>
+                            <img src="" class="img-avatar" alt="">
+                            <span class="d-md-down-none">Erick Stalyn Pacherrez Puyén</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-header text-center">
@@ -93,8 +105,8 @@
 
         <!-- PARTE INFERIOR DE LA APP -->
         <footer class="app-footer">
-            <span><a href="http://www.incanatoit.com/">EasyCode</a> &copy; 2019</span>
-            <span class="ml-auto">Desarrollado por <a href="http://www.google.com/">EasyCode</a></span>
+            <span><a href="#">EasyCode</a> &copy; 2020</span>
+            <span class="ml-auto">Desarrollado por <a href="#">EasyCode</a></span>
         </footer>
         <!-- FIN DE LA PARTE INFERIOR DE LA APP -->
 
