@@ -11,8 +11,7 @@ class CreateTipoExpedienteTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('tipo_expediente', function (Blueprint $table) {
             $table->tinyIncrements('id');// usa 1 byte , cantidad max: 127
             $table->string('descripcion', 50);

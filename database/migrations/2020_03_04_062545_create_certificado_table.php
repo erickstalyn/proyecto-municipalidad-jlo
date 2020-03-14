@@ -11,8 +11,7 @@ class CreateCertificadoTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('certificado', function (Blueprint $table) {
             // $table->increments('id'); // usa 4 bytes. Maximo valor: 2 147 483 647
             $table->char('num',20)->primary();

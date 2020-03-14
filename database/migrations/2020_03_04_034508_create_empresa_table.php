@@ -11,10 +11,10 @@ class CreateEmpresaTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('empresa', function (Blueprint $table) {
-            $table->smallIncrements('id'); // usa 2 bytes - máximo 32767 datos
+            $table->smallIncrements('id'); // usa 2 bytes - máximo 65,535 datos
+
             $table->char('ruc', 11)->unique();
             $table->string('razon_social', 350)->unique();
             $table->string('nombre_comercial', 350);
@@ -26,7 +26,6 @@ class CreateEmpresaTable extends Migration
             $table->date('inicio_actividades')->nullable();
             $table->json('act_comerciales')->nullable();
             $table->json('repre_legales')->nullable();
-
         });
     }
 

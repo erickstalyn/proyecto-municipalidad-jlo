@@ -11,13 +11,14 @@ class CreatePersonaTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('persona', function (Blueprint $table) {
-            $table->smallIncrements('id'); // usa 2 bytes - máximo 32767 datos
+            $table->smallIncrements('id'); // usa 2 bytes - máximo 65,535 datos
+
             $table->char('dni', 8);
-            $table->string('nombres', 120);
-            $table->string('apellidos', 120);
+            $table->string('nombre', 50);
+            $table->string('apellido_paterno', 25);
+            $table->string('apellido_materno', 25);
         });
     }
 

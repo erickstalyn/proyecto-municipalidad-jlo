@@ -11,8 +11,7 @@ class CreateTipoCertificadoTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('tipo_certificado', function (Blueprint $table) {
             $table->tinyIncrements('id');// usa 1 byte , cantidad max: 127
             $table->string('descripcion',50);
