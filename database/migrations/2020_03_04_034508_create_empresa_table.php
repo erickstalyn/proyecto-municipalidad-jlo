@@ -19,7 +19,7 @@ class CreateEmpresaTable extends Migration
             $table->string('nombre_comercial', 350);    // Nombre comercial de la empresa.
             $table->string('tipo', 200)->nullable();    // Tipo de empresa.
             $table->string('condicion', 45);    // Condicion.
-            $table->string('estado', 45);   // Estado.
+            $table->string('estado', 45);   // Estado. 
             $table->string('sector', 300)->nullable();  // Sector al que pertenece.
             $table->date('fecha_inscripcion')->nullable();  // Fecha de inscripcion en la SUNAT.
             $table->date('inicio_actividades')->nullable(); // Fecha de inicio de actividades.
