@@ -21,7 +21,7 @@ class CreateExpedienteTable extends Migration
             $table->unsignedTinyInteger('tramite_id');  // Clase de tramite que esta realizando.
             $table->unsignedInteger('certificado_id')->nullable();  // Certificado por el cual esta realizando el tramite.
 
-            $table->foreign('tramite_id')->references('id')->on('tipo_expediente');
+            $table->foreign('tramite_id')->references('id')->on('tramite');
             $table->foreign('tramitador_id')->references('id')->on('persona');
             $table->foreign('certificado_id')->references('id')->on('certificado');
 
