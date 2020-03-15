@@ -13,8 +13,11 @@ class CreateTipoCertificadoTable extends Migration
      */
     public function up() {
         Schema::create('tipo_certificado', function (Blueprint $table) {
-            $table->tinyIncrements('id');// usa 1 byte , cantidad max: 127
-            $table->string('descripcion',50);
+            $table->tinyIncrements('id');   // Llave primaria. Por usar 1 byte y ser sin signo entonces tiene disponible 255 datos
+            $table->string('descripcion', 50);  // Descripcion. Por ejemplo: "LICENCIA DE FUNCIONAMIENTO DEFINITIVA", "CERTIFICADO EN SEGURIDAD DE DEFENSA CIVIL".
+            $table->unsignedTinyInteger('area_id'); // Llave foranea. Sirve para saber a que area pertenece este certificado.
+            
+            $table->foreign('area_id')->references('id')->on('area');
         });
     }
 
@@ -23,8 +26,7 @@ class CreateTipoCertificadoTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('tipo_certificado');
     }
 }

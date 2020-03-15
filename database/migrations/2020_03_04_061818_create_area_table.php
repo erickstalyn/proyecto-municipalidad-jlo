@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSectorTable extends Migration
+class CreateAreaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateSectorTable extends Migration
      * @return void
      */
     public function up() {
-        Schema::create('sector', function (Blueprint $table) {
+        Schema::create('area', function (Blueprint $table) {
             $table->tinyIncrements('id');   // Llave primaria. Por usar 1 byte y ser sin signo tiene disponible 255 datos.
-            $table->string('nombre', 100);  // Nombre del sector. Por ejemplo: "Urb. Latina".
-            $table->unsignedTinyInteger('numero');  // Numero de orden.
+            $table->string('nombre', 50);   // Nombre. Por ejemplo: "SALUBRIDAD", "DEFENSA CIVIL", "LICENCIAS"
         });
     }
 
@@ -25,6 +24,6 @@ class CreateSectorTable extends Migration
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('sector');
+        Schema::dropIfExists('area');
     }
 }

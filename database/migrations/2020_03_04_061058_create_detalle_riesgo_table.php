@@ -13,10 +13,13 @@ class CreateDetalleRiesgoTable extends Migration
      */
     public function up() {
         Schema::create('detalle_riesgo', function (Blueprint $table) {
-            $table->unsignedSmallInteger('establecimiento_id');
-            $table->unsignedTinyInteger('riesgo_id');
+            $table->unsignedSmallInteger('establecimiento_id'); // Llave foranea. Sirve para saber que riesgo0 tiene este establecimiento
+            $table->unsignedTinyInteger('riesgo_id');   // Llave foranea. Sirve para saber que establecimiento tiene este riesgo
 
-            $table->primary(['establecimiento_id', 'riesgo_id']);
+            $table->primary(['establecimiento_id', 'riesgo_id']);   // Llave primaria.
+
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
+            $table->foreign('riesgo_id')->references('id')->on('riesgo');
         });
     }
 
@@ -25,7 +28,7 @@ class CreateDetalleRiesgoTable extends Migration
      *
      * @return void
      */
-    public function down(){
+    public function down() {
         Schema::dropIfExists('detalle_riesgo');
     }
 }
