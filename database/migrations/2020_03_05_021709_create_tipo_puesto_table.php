@@ -15,7 +15,7 @@ class CreateTipoPuestoTable extends Migration
         Schema::create('tipo_puesto', function (Blueprint $table) {
             $table->tinyIncrements('id');   // Llave primaria. Por usar 1 byte y ser sin signo tiene disponible 255 datos.
             $table->string('nombre', 50);   // Nombre. 
-            $table->tinyInteger('nivel');   // Nivel. Sirve para saber el nivel de acceso que tiene este tipo de puesto con respecto al sistema.
+            $table->unsignedtinyInteger('nivel');   // Nivel. Sirve para saber el nivel de acceso que tiene este tipo de puesto con respecto al sistema.
         });
     }
 
