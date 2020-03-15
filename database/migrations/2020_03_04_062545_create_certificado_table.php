@@ -13,7 +13,7 @@ class CreateCertificadoTable extends Migration
      */
     public function up() {
         Schema::create('certificado', function (Blueprint $table) {
-            $table->increments('id');   // Llave primaria. Por usar 4 bytes y ser sin signo tiene disponible . Maximo valor: 2,294'967,295
+            $table->increments('id');   // Llave primaria. Por usar 4 bytes y ser sin signo tiene disponible . Maximo valor: 4,294'967,295
             $table->char('numero', 6);  // Numero. Por ejemplo: "  4564", " 45165".
             $table->date('fecha_expedicion');   // Fecha de expedicion. Es la fecha en la que el tramite para este certificado termina.
             $table->char('estado', 1);  // Estado. Sirve para saber en que estado se encuentra actualmente. Por ejemplo: ('0': vencido), ('1': vigencia).

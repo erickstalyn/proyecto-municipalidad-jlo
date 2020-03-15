@@ -13,12 +13,11 @@ class CreatePersonaTable extends Migration
      */
     public function up() {
         Schema::create('persona', function (Blueprint $table) {
-            $table->smallIncrements('id'); // usa 2 bytes - máximo 65,535 datos
-
-            $table->char('dni', 8);
-            $table->string('nombre', 50);
-            $table->string('apellido_paterno', 25);
-            $table->string('apellido_materno', 25);
+            $table->smallIncrements('id');  // Llave primaria. Por usar 2 bytes y ser sin signo tiene disponible 65,535 datos.
+            $table->char('dni', 8); // DNI.
+            $table->string('nombre', 50);   // Nombre.
+            $table->string('apellido_paterno', 25); // Apellido paterno.
+            $table->string('apellido_materno', 25); // Apellido materno.
         });
     }
 
@@ -27,8 +26,7 @@ class CreatePersonaTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('persona');
     }
 }
