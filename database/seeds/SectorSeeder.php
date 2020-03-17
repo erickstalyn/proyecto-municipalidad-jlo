@@ -10,7 +10,7 @@ class SectorSeeder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('sector')->insert(array(
+        DB::table('sector')->insert(array(array(
             'id' => 1,
             'nombre' => 'Urb. Latina',
             'numero' => 1
@@ -18,6 +18,6 @@ class SectorSeeder extends Seeder
             'id' => 2,
             'nombre' => 'Urb. Las flores',
             'numero' => 2
-        ));
+        )));
     }
 }
