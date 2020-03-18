@@ -22,6 +22,9 @@ class AreaSedder extends Seeder
         ), array(
             'id' => 4,
             'nombre' => 'MESA DE PARTES'
+        ), array(
+            'id' => 5,
+            'nombre' => 'DESARROLLO ECONOMICO Y SOCIAL'
         )));
     }
 }

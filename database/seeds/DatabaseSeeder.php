@@ -10,10 +10,15 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run() {
-        $this->call(SectorSeeder::class);
-        $this->call(TipoBandejaSeeder::class);
-        $this->call(AreaSeeder::class);
-        $this->call(BandejaSeeder::class);
-        $this->call(GrupoRiesgoSeeder::class);
+        $this->call('SectorSeeder');
+        $this->call('TipoBandejaSeeder');
+        $this->call('AreaSeeder');
+        $this->call('BandejaSeeder');
+        $this->call('GrupoRiesgoSeeder');
+        $this->call('RiesgoSeeder');
+        $this->call('ConfiguracionSeeder');
+        $this->call('TipoCertificadoSeeder');
+        $this->call('TipoPuestoSeeder');
+        $this->call('TramiteSeeder');
     }
 }
