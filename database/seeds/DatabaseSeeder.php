@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TipoPuestoSeeder::class);
         $this->call(TramiteSeeder::class);
         $this->call(EtapaSeeder::class);
+        $this->call(PersonaSeeder::class);
+        $this->call(PuestoSeeder::class);
+        $this->call(UsuarioSeeder::class);
     }
 }
