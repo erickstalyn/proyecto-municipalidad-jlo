@@ -10,7 +10,7 @@ class GrupoRiesgoSeeder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('grupo_riesgo')->create(array(array(
+        DB::table('grupo_riesgo')->insert(array(array(
             'id' => 1,
             'codigo' => 'A',
             'descripcion' => 'Riesgos por areas',

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class AreaSedder extends Seeder
+class AreaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -10,7 +10,7 @@ class AreaSedder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('area')->create(array(array(
+        DB::table('area')->insert(array(array(
             'id' => 1,
             'nombre' => 'SUB GERENCIA DE LA PROMOCION DE LA SALUD Y SANIDAD'
         ), array(

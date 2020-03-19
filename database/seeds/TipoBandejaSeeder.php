@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TipoBandejaSedder extends Seeder
+class TipoBandejaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -10,7 +10,7 @@ class TipoBandejaSedder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('tipo_bandeja')->create(array(array(
+        DB::table('tipo_bandeja')->insert(array(array(
             'id' => 1,
             'nombre' => 'ENTRADA'
         ), array(

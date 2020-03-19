@@ -18,7 +18,7 @@ class CreateEstablecimientoTable extends Migration
             $table->char('codigo', 4)->nullable();  // Codigo del establecimiento que viene en la consulta a la SUNAT.
             $table->string('tipo', 50)->nullable(); // Tipo de establecimiento que viene en la consulta a la SUNAT.
             $table->unsignedSmallInteger('area')->nullable();   // Area del establecimiento en metros cuadrados.
-            $table->
+            $table->json('giro_negocio');   // Giros de negocio del establecimiento.
             $table->unsignedSmallInteger('empresa_id'); // Llave foranea. Sirve para saber a que empresa pertenece.
             $table->unsignedTinyInteger('sector_id');   // Llave foranea. Sirve para saber a que sector pertenece el establecimiento.
 

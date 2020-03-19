@@ -10,7 +10,7 @@ class TipoCertificadoSeeder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('tipo_certificado')->create(array(array(
+        DB::table('tipo_certificado')->insert(array(array(
             'descripcion' => 'LICENCIA DE FUNCIONAMIENTO DEFINITIVA',
             'area_id' => 3
         ), array(

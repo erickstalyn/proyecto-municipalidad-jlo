@@ -10,7 +10,7 @@ class ConfiguracionSeeder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('configuracion')->create(array(array(
+        DB::table('configuracion')->insert(array(array(
             'area_id' => 1,
             'grupo_riesgo_codigo' => 'A'
         ), array(

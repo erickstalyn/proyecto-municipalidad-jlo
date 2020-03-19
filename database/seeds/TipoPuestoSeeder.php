@@ -10,7 +10,7 @@ class TipoPuestoSeeder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('tipo_puesto')->create(array(array(
+        DB::table('tipo_puesto')->insert(array(array(
             'nombre' => 'JEFE',
             'nivel' => '1'
         ), array(

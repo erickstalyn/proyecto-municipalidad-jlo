@@ -14,7 +14,7 @@ class CreateTramiteTable extends Migration
     public function up() {
         Schema::create('tramite', function (Blueprint $table) {
             $table->tinyIncrements('id');   // Llave primaria. Por usar 1 byte tiene disponible 255 datos.
-            $table->string('descripcion', 50);  // Descripcion.
+            $table->string('descripcion', 150);  // Descripcion.
             $table->json('requisito');  // Requisitos para realizar este tramite.
         });
     }

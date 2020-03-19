@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class BandejaSedder extends Seeder
+class BandejaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class BandejaSedder extends Seeder
      */
     public function run() {
         // BANDEJAS DEL AREA DE SALUBRIDAD
-        DB::table('bandeja')->create(array(array(
+        DB::table('bandeja')->insert(array(array(
             'orden' => 1,
             'tipo_bandeja_id' => 1,
             'area_id' => 1
@@ -34,7 +34,7 @@ class BandejaSedder extends Seeder
         )));
 
         // BANDEJAS DEL AREA DE DEFENSA CIVIL
-        DB::table('bandeja')->create(array(array(
+        DB::table('bandeja')->insert(array(array(
             'orden' => 1,
             'tipo_bandeja_id' => 1,
             'area_id' => 2
@@ -57,7 +57,7 @@ class BandejaSedder extends Seeder
         )));
 
         // BANDEJAS DEL AREA DE LICENCIAS
-        DB::table('bandeja')->create(array(array(
+        DB::table('bandeja')->insert(array(array(
             'orden' => 1,
             'tipo_bandeja_id' => 1,
             'area_id' => 3
@@ -80,7 +80,7 @@ class BandejaSedder extends Seeder
         )));
 
         // BANDEJAS DEL AREA DE MESA DE PARTES
-        DB::table('bandeja')->create(array(array(
+        DB::table('bandeja')->insert(array(array(
             'orden' => 1,
             'tipo_bandeja_id' => 1,
             'area_id' => 4
