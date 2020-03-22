@@ -61,6 +61,12 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'ExpedientRecorder' => \App\Http\Middleware\ExpedientRecorder::class,
+        'CertificateRecorder' => \App\Http\Middleware\CertificateRecorder::class,
+        'InspectionRecorder' => \App\Http\Middleware\InspectionRecorder::class,
+        'DerivationRecorder' => \App\Http\Middleware\DerivationRecorder::class,
+        'EnterpriseRecorder' => \App\Http\Middleware\EnterpriseRecorder::class,
+        'WorkerRecorder' => \App\Http\Middleware\WorkerRecorder::class
     ];
 
     /**
